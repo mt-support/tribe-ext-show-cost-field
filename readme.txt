@@ -41,6 +41,7 @@ tends to be very limited.
 = 1.0.1 2018-04-03 =
 
 * Fix - Now works with Event Tickets (with or without Event Tickets Plus) or with Eventbrite Tickets
+* Tweak - License changed from GPLv2+ to GPLv3+
 
 = 1.0.0 2016-11-03 =
 
