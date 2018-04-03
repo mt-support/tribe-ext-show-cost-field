@@ -1,6 +1,7 @@
 <?php
 /**
  * Plugin Name:       Event Tickets/Eventbrite Extension: Show Cost Field
+ * Plugin URI:        https://theeventscalendar.com/extensions/show-cost-field/
  * Description:       Force displaying The Events Calendar's "Event Cost" field in wp-admin and the Community Events event edit form (if applicable) when Event Tickets or Eventbrite Tickets is activated.
  * Version:           1.0.1
  * Extension Class:   Tribe__Extension__Show_Cost_Field
@@ -38,7 +39,6 @@ if (
 		 * This always executes even if the required plugins are not present.
 		 */
 		public function construct() {
-			$this->set_url( 'https://theeventscalendar.com/extensions/show-cost-field/' );
 			add_action( 'tribe_plugins_loaded', array( $this, 'required_tribe_classes' ), 0 );
 		}
 
