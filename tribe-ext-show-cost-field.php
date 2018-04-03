@@ -44,25 +44,16 @@ if (
 
 		/**
 		 * Check required plugins after all Tribe plugins have loaded.
+		 *
+		 * If neither Event Tickets nor Eventbrite Tickets, require Event Tickets.
 		 */
 		public function required_tribe_classes() {
-			// If neither Event Tickets or Eventbrite Tickets, require Event Tickets
 			if (
 				! Tribe__Dependency::instance()->is_plugin_active( 'Tribe__Tickets__Main' )
 				&& ! Tribe__Dependency::instance()->is_plugin_active( 'Tribe__Events__Tickets__Eventbrite__Main' )
 			) {
 				add_filter( 'gettext_with_context', array( $this, 'reqd_plugins_and_to_or_text' ), 10, 4 );
 				$this->add_required_plugin( 'Tribe__Tickets__Main' );
-				$this->add_required_plugin( 'Tribe__Events__Tickets__Eventbrite__Main' );
-			}
-
-			// Event Tickets
-			if ( Tribe__Dependency::instance()->is_plugin_active( 'Tribe__Tickets__Main' ) ) {
-				$this->add_required_plugin( 'Tribe__Tickets__Main' );
-			}
-
-			// Eventbrite Tickets
-			if ( Tribe__Dependency::instance()->is_plugin_active( 'Tribe__Events__Tickets__Eventbrite__Main' ) ) {
 				$this->add_required_plugin( 'Tribe__Events__Tickets__Eventbrite__Main' );
 			}
 		}
